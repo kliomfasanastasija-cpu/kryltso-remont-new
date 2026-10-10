@@ -2156,3 +2156,58 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-07 .шторка__кадр { flex: none; }
     #экран-07 .объект__описание, #экран-07 .объект--главный .объект__описание { max-width: none; }
   }
+
+/* экран 08 */
+#экран-08 .секция__шапка { max-width: 52rem; margin-bottom: clamp(28px, 4vw, 52px); }
+  #экран-08 .ролик-и-доводы { display: grid; grid-template-columns: minmax(0, 7.5fr) minmax(0, 4.5fr); gap: clamp(28px, 5vw, 72px); align-items: start; align-content: start; }
+
+  #экран-08 .ролик { position: relative; margin: 0; padding: clamp(14px, 1.8vw, 22px); border-radius: var(--радиус-малый); display: grid; gap: clamp(12px, 1.4vw, 16px); align-content: start; min-width: 0; }
+  #экран-08 .ролик::before, #экран-08 .ролик::after { content: ""; position: absolute; width: 18px; height: 18px; pointer-events: none; }
+  #экран-08 .ролик::before { top: 8px; left: 8px; border-top: var(--нить) solid; border-left: var(--нить) solid; }
+  #экран-08 .ролик::after { right: 8px; bottom: 8px; border-right: var(--нить) solid; border-bottom: var(--нить) solid; }
+  #экран-08 .ролик__окно { position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; border-radius: var(--радиус-малый); background: color-mix(in srgb, black 80%, transparent); }
+  #экран-08 .ролик__фото { position: absolute; inset: 0; border-radius: 0; box-shadow: none; }
+  #экран-08 .ролик__кадр { position: absolute; inset: 0; width: 100%; height: 100%; margin: 0; object-fit: cover; display: block; }
+  #экран-08 .ролик__плеер { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+  #экран-08 .ролик__играть { position: absolute; top: 50%; left: 50%; width: clamp(64px, 8vw, 96px); aspect-ratio: 1 / 1; margin: calc(clamp(64px, 8vw, 96px) / -2) 0 0 calc(clamp(64px, 8vw, 96px) / -2);
+    display: grid; place-items: center; border-radius: 50%; text-decoration: none; cursor: pointer;
+    transition: transform .25s var(--плавность); }
+  #экран-08 .ролик__играть:hover { transform: scale(1.06); }
+  #экран-08 .ролик__играть:focus-visible { outline: var(--нить) solid; outline-offset: 4px; }
+  #экран-08 .ролик__треугольник { display: block; width: 34%; aspect-ratio: 1 / 1.15; margin-left: 8%; background: currentColor; clip-path: polygon(0 0, 100% 50%, 0 100%); }
+  #экран-08 .ролик__длина { position: absolute; right: 12px; bottom: 12px; padding: 3px 9px; border-radius: var(--радиус-малый); font-size: var(--кегль-мелкий); line-height: 1.3; font-variant-numeric: tabular-nums; pointer-events: none; }
+  #экран-08 .ролик__подпись { margin: 0; font-size: var(--кегль-мелкий); line-height: 1.45; }
+
+  #экран-08 .доводы { list-style: none; margin: 0; padding: 0; align-content: start; }
+  #экран-08 .довод { display: grid; grid-template-columns: clamp(56px, 6vw, 84px) minmax(0, 1fr); gap: 0 clamp(8px, 1.6vw, 20px); align-items: baseline; align-content: start; padding-block: clamp(16px, 2vw, 24px); }
+  #экран-08 .довод__номер { font-size: var(--кегль-цифра); font-weight: 300; line-height: 1; font-variant-numeric: tabular-nums; }
+  #экран-08 .довод__имя { margin: 0 0 .3rem; font-size: var(--кегль-лид); font-weight: 700; line-height: 1.25; }
+  #экран-08 .довод__текст { margin: 0; font-size: var(--кегль-текст); line-height: 1.55; }
+
+  #экран-08.светлый .ролик { background: var(--цвет-фон-карточки); border: 1px solid var(--цвет-линия); color: var(--цвет-текст); }
+  #экран-08.светлый .ролик::before, #экран-08.светлый .ролик::after { border-color: var(--цвет-акцент-маркер); }
+  #экран-08.светлый .ролик__играть { background: var(--цвет-фон-карточки); color: var(--цвет-акцент-тёмный); }
+  #экран-08.светлый .ролик__длина { background: color-mix(in srgb, black 70%, transparent); color: var(--цвет-тёмный-текст); }
+  #экран-08.светлый .ролик__подпись { color: var(--цвет-текст-тихий); }
+  #экран-08.светлый .довод { border-top: 1px solid var(--цвет-линия); }
+  #экран-08.светлый .доводы .довод:last-child { border-bottom: 1px solid var(--цвет-линия); }
+  #экран-08.светлый .довод__номер { color: var(--цвет-акцент-маркер); }
+  #экран-08.светлый .довод__текст { color: var(--цвет-текст-мягкий); }
+
+  #экран-08.тёмный .ролик { background: color-mix(in srgb, var(--цвет-тёмный-текст) 6%, transparent); border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 22%, transparent); color: var(--цвет-тёмный-текст); }
+  #экран-08.тёмный .ролик::before, #экран-08.тёмный .ролик::after { border-color: var(--цвет-акцент-яркий); }
+  #экран-08.тёмный .ролик__играть { background: color-mix(in srgb, black 70%, transparent); color: var(--цвет-акцент-яркий); border: var(--нить) solid var(--цвет-акцент-яркий); }
+  #экран-08.тёмный .ролик__длина { background: color-mix(in srgb, black 70%, transparent); color: var(--цвет-тёмный-текст); }
+  #экран-08.тёмный .ролик__подпись { color: color-mix(in srgb, var(--цвет-тёмный-текст) 78%, transparent); }
+  #экран-08.тёмный .довод { border-top: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 22%, transparent); }
+  #экран-08.тёмный .доводы .довод:last-child { border-bottom: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 22%, transparent); }
+  #экран-08.тёмный .довод__номер { color: var(--цвет-акцент-яркий); }
+  #экран-08.тёмный .довод__текст { color: color-mix(in srgb, var(--цвет-тёмный-текст) 80%, transparent); }
+
+  @media (max-width: 899px) {
+    #экран-08 .ролик-и-доводы { grid-template-columns: minmax(0, 1fr); }
+    #экран-08 .довод { grid-template-columns: 52px minmax(0, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #экран-08 .ролик__играть { transition: none; }
+  }

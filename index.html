@@ -15,6 +15,7 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Казакова Анастасия Александровна",
+  "@id": "https://kliomfasanastasija-cpu.github.io/kryltso-remont-new/#person",
   "jobTitle": "Менеджер по работе с ключевыми клиентами · Крыльцо-ремонт.рф",
   "url": "https://kliomfasanastasija-cpu.github.io/kryltso-remont-new/"
 }
@@ -522,7 +523,7 @@
   <p class="врезка"><span class="врезка__текст">Сами работы на&nbsp;объекте&nbsp;— от&nbsp;3&nbsp;дней. Небольшое крыльцо делаем за&nbsp;3–4&nbsp;дня, точный срок назовём в&nbsp;расчёте.</span></p>
 </div>
 </section>
-<section class="блок блок--работы блок--тихо светлый" id="экран-07" data-тип="работы" data-вёрстка="своя"><div class="стык стык--верх" aria-hidden="true" style="--стык-сосед: var(--цвет-фон-2, var(--цвет-фон))"></div>
+<section class="блок блок--работы блок--тихо светлый" id="экран-07" data-тип="работы" data-вёрстка="своя"><div class="стык стык--верх" aria-hidden="true" style="--стык-сосед: var(--цвет-фон-2, var(--цвет-фон))"></div><div class="стык стык--низ" aria-hidden="true" style="--стык-сосед: var(--цвет-фон-2, var(--цвет-фон))"></div>
 <div class="блок__внутри">
   <header class="секция__шапка">
     <span class="кикер">Наши работы</span>
@@ -652,6 +653,65 @@
       }, { threshold: 0.6 });
       Array.prototype.forEach.call(корень.querySelectorAll('.шторка__кадр'), function (к) { наблюдатель.observe(к); });
     }
+  })();
+  </script>
+</div>
+</section>
+<section class="блок блок--видео блок--тихо светлый второй" id="экран-08" data-тип="видео" data-вёрстка="своя"><div class="стык стык--верх" aria-hidden="true" style="--стык-сосед: var(--цвет-фон)"></div>
+<div class="блок__внутри">
+  <header class="секция__шапка">
+    <span class="кикер">Полторы минуты о&nbsp;главном</span>
+    <h2>Посмотрите, как устроена облицовка&nbsp;C3</h2>
+    <p class="секция__лид">Короткий ролик о&nbsp;материале: прочность, мороз и&nbsp;почему вода не&nbsp;попадает внутрь ступени</p>
+  </header>
+  <div class="ролик-и-доводы">
+    <figure class="ролик">
+      <div class="ролик__окно" data-ролик>
+        <figure class="фото ролик__фото"><img class="ролик__кадр" src="img/video-c3-oblozhka.webp" alt="Обложка ролика о ступенях C3" width="1280" height="720" loading="lazy"></figure>
+        <a class="ролик__играть" role="button" href="https://rutube.ru/video/b8aff65f78e0d0ae2d94122f860629b3/" target="_blank" rel="noopener" aria-label="Смотреть ролик «Облицовочный материал для уличных лестниц», 1 минута 40 секунд"><span class="ролик__треугольник" aria-hidden="true"></span></a>
+        <span class="ролик__длина" aria-hidden="true">1:40</span>
+      </div>
+      <figcaption class="ролик__подпись">Облицовочный материал для уличных лестниц · 1:40 · Rutube</figcaption>
+    </figure>
+    <ol class="доводы">
+      <li class="довод">
+        <span class="довод__номер" aria-hidden="true">01</span>
+        <div><h3 class="довод__имя">Прочность&nbsp;М1200</h3><p class="довод__текст">На&nbsp;уровне натурального гранита</p></div>
+      </li>
+      <li class="довод">
+        <span class="довод__номер" aria-hidden="true">02</span>
+        <div><h3 class="довод__имя">Морозостойкость&nbsp;F500</h3><p class="довод__текст">До&nbsp;500&nbsp;циклов заморозки и&nbsp;оттаивания без потери прочности</p></div>
+      </li>
+      <li class="довод">
+        <span class="довод__номер" aria-hidden="true">03</span>
+        <div><h3 class="довод__имя">Монолитная ступень</h3><p class="довод__текст">Вода не&nbsp;попадает внутрь, и&nbsp;мороз не&nbsp;выдавливает подступенок</p></div>
+      </li>
+    </ol>
+  </div>
+  <script>
+  (function () {
+    var окно = document.querySelector('#экран-08 [data-ролик]');
+    if (!окно) return;
+    var кнопка = окно.querySelector('.ролик__играть');
+    var кадр = окно.querySelector('.ролик__фото');
+    var длина = окно.querySelector('.ролик__длина');
+    function включить(событие) {
+      if (событие) событие.preventDefault();
+      var рамка = document.createElement('iframe');
+      рамка.className = 'ролик__плеер';
+      рамка.src = 'https://rutube.ru/play/embed/b8aff65f78e0d0ae2d94122f860629b3?autoplay=1';
+      рамка.setAttribute('allow', 'clipboard-write; autoplay; fullscreen; picture-in-picture');
+      рамка.setAttribute('allowfullscreen', '');
+      рамка.title = 'Облицовочный материал для уличных лестниц';
+      окно.removeChild(кнопка);
+      if (длина) окно.removeChild(длина);
+      окно.replaceChild(рамка, кадр);
+    }
+    кнопка.removeAttribute('target');
+    кнопка.addEventListener('click', включить);
+    кнопка.addEventListener('keydown', function (e) {
+      if (e.key === ' ' || e.key === 'Spacebar') включить(e);
+    });
   })();
   </script>
 </div>
