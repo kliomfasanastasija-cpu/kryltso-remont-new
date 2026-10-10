@@ -1763,7 +1763,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-02 .выноска__имя { margin: 0 0 .35rem; font-size: var(--кегль-лид); font-weight: 700; line-height: 1.25; }
   #экран-02 .выноска__беда { margin: 0; font-size: var(--кегль-текст); line-height: 1.55; }
   #экран-02 .место { position: sticky; top: 24px; display: grid; gap: .75rem; }
-  #экран-02 .место .заглушка-картинки { aspect-ratio: 4 / 5; width: 100%; border-radius: var(--радиус-малый); }
+  #экран-02 .место .фото { border-radius: var(--радиус-малый); }
+  #экран-02 .место .фото img { aspect-ratio: 4 / 5; object-position: 50% 70%; }
   #экран-02 .место__подпись { margin: 0; display: flex; gap: .625rem; align-items: baseline; font-size: var(--кегль-мелкий); line-height: 1.45; }
   #экран-02 .место__подпись::before { content: ""; flex: none; width: 1.5rem; height: var(--нить); transform: translateY(-.25em); }
 
@@ -1786,7 +1787,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   @media (max-width: 899px) {
     #экран-02 .чертёж { grid-template-columns: 1fr; }
     #экран-02 .место { position: static; }
-    #экран-02 .место .заглушка-картинки { aspect-ratio: 4 / 3; }
+    #экран-02 .место .фото img { aspect-ratio: 4 / 3; }
     #экран-02 .выноска { grid-template-columns: 52px minmax(0, 1fr); }
   }
 
@@ -1799,7 +1800,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-03 .рамка::before, #экран-03 .рамка::after { content: ""; position: absolute; width: 18px; height: 18px; pointer-events: none; }
   #экран-03 .рамка::before { top: 8px; left: 8px; border-top: var(--нить) solid; border-left: var(--нить) solid; }
   #экран-03 .рамка::after { right: 8px; bottom: 8px; border-right: var(--нить) solid; border-bottom: var(--нить) solid; }
-  #экран-03 .рамка .заглушка-картинки { aspect-ratio: 4 / 3; width: 100%; border-radius: var(--радиус-малый); }
+  #экран-03 .рамка .фото { border-radius: var(--радиус-малый); }
+  #экран-03 .рамка .фото img { aspect-ratio: 16 / 10; }
   #экран-03 .рамка__подпись { margin: 0; font-size: var(--кегль-мелкий); line-height: 1.45; }
   #экран-03 .гарантия { display: grid; gap: .375rem; padding: clamp(20px, 2.4vw, 28px) clamp(20px, 2.6vw, 32px);
     border-radius: var(--радиус-карточки); border-top-left-radius: 0; border-bottom-left-radius: 0; }
@@ -1839,7 +1841,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-03 .итог { grid-template-columns: 1fr; }
     #экран-03 .результаты { order: -1; }
     #экран-03 .результат { grid-template-columns: 52px minmax(0, 1fr); }
-    #экран-03 .рамка .заглушка-картинки { aspect-ratio: 16 / 10; }
+    #экран-03 .рамка .фото img { aspect-ratio: 16 / 10; }
   }
 
 /* экран 04 */
