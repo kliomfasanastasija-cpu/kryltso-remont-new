@@ -2211,3 +2211,46 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   @media (prefers-reduced-motion: reduce) {
     #экран-08 .ролик__играть { transition: none; }
   }
+
+/* экран 09 */
+#экран-09 .секция__шапка { max-width: 52rem; margin-bottom: clamp(28px, 4vw, 52px); }
+  #экран-09 .голоса { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 4fr); gap: clamp(28px, 5vw, 72px); align-items: start; align-content: start; }
+
+  #экран-09 .голос-длинный { position: relative; margin: 0; display: grid; gap: clamp(14px, 1.8vw, 22px); align-content: start; min-width: 0;
+    padding: clamp(28px, 3.6vw, 52px) clamp(22px, 3.2vw, 48px) clamp(24px, 3vw, 40px) clamp(26px, 3.6vw, 52px);
+    border-radius: var(--радиус-карточки); border-top-left-radius: 0; border-bottom-left-radius: 0; }
+  #экран-09 .голос-длинный::before { content: "«"; display: block; font-size: var(--кегль-цифра); font-weight: 200; line-height: .6; height: .45em; }
+  #экран-09 .голос-длинный blockquote { margin: 0; font-size: var(--кегль-лид); line-height: 1.6; }
+  #экран-09 .голос-длинный figcaption { margin: 0; font-size: var(--кегль-мелкий); line-height: 1.4; }
+
+  #экран-09 .голос-короткий { margin: 0; display: grid; gap: .6rem; align-content: start; min-width: 0; padding-top: clamp(14px, 1.8vw, 22px); }
+  #экран-09 .голос-короткий blockquote { margin: 0; font-size: var(--кегль-лид); font-weight: 500; line-height: 1.35; }
+  #экран-09 .голос-короткий figcaption { margin: 0; font-size: var(--кегль-мелкий); line-height: 1.4; }
+
+  #экран-09 .голоса-справа { display: grid; gap: clamp(20px, 2.6vw, 32px); align-content: start; min-width: 0; }
+  #экран-09 .все-отзывы { margin: 0; }
+  #экран-09 .все-отзывы a { font-size: var(--кегль-текст); font-weight: 600; text-decoration: underline; text-underline-offset: .25em; text-decoration-thickness: 1px; transition: color .25s var(--плавность); }
+  #экран-09 .все-отзывы a:focus-visible { outline: var(--нить) solid; outline-offset: 4px; }
+
+  #экран-09.светлый .голос-длинный { border-left: var(--нить) solid var(--цвет-акцент-маркер); background: color-mix(in srgb, var(--цвет-тёплый) 16%, transparent); }
+  #экран-09.светлый .голос-длинный::before { color: var(--цвет-акцент-маркер); }
+  #экран-09.светлый .голос-длинный blockquote { color: var(--цвет-текст); }
+  #экран-09.светлый .голос-длинный figcaption, #экран-09.светлый .голос-короткий figcaption { color: var(--цвет-текст-тихий); }
+  #экран-09.светлый .голос-короткий { border-top: 1px solid var(--цвет-линия); }
+  #экран-09.светлый .голос-короткий blockquote { color: var(--цвет-текст-мягкий); }
+  #экран-09.светлый .все-отзывы a { color: var(--цвет-акцент-тёмный); }
+
+  #экран-09.тёмный .голос-длинный { border-left: var(--нить) solid var(--цвет-акцент-яркий); background: color-mix(in srgb, var(--цвет-тёплый) 10%, transparent); }
+  #экран-09.тёмный .голос-длинный::before { color: var(--цвет-акцент-яркий); }
+  #экран-09.тёмный .голос-длинный blockquote { color: var(--цвет-тёмный-текст); }
+  #экран-09.тёмный .голос-длинный figcaption, #экран-09.тёмный .голос-короткий figcaption { color: color-mix(in srgb, var(--цвет-тёмный-текст) 70%, transparent); }
+  #экран-09.тёмный .голос-короткий { border-top: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 22%, transparent); }
+  #экран-09.тёмный .голос-короткий blockquote { color: color-mix(in srgb, var(--цвет-тёмный-текст) 85%, transparent); }
+  #экран-09.тёмный .все-отзывы a { color: var(--цвет-акцент-яркий); }
+
+  @media (max-width: 899px) {
+    #экран-09 .голоса { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #экран-09 .все-отзывы a { transition: none; }
+  }
