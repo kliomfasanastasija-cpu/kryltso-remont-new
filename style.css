@@ -2055,3 +2055,44 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   @media (prefers-reduced-motion: reduce) {
     #экран-05 .слой, #экран-05 .образец__плитка, #экран-05 .цвет__плитка { transition: none; }
   }
+
+/* экран 06 */
+#экран-06 .секция__шапка { max-width: 52rem; margin-bottom: clamp(28px, 4vw, 52px); }
+
+  #экран-06 .маршрут { --зазор: clamp(24px, 3.4vw, 48px); list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: var(--зазор); row-gap: clamp(32px, 4vw, 56px); align-content: start; }
+  #экран-06 .этап { position: relative; display: grid; gap: .5rem; align-content: start; min-width: 0; padding-top: clamp(28px, 3vw, 40px); }
+  #экран-06 .этап::before { content: ""; position: absolute; top: 6px; left: 0; width: calc(100% + var(--зазор)); height: 0; border-top: 1px solid; }
+  #экран-06 .этап:nth-child(3n)::before { width: 100%; }
+  #экран-06 .этап::after { content: ""; position: absolute; top: 0; left: 0; width: 13px; height: 13px; border: var(--нить) solid; border-radius: var(--радиус-малый); transform: rotate(45deg) scale(.8); }
+  #экран-06 .этап__номер { font-size: var(--кегль-цифра); font-weight: 300; line-height: 1; font-variant-numeric: tabular-nums; }
+  #экран-06 .этап__имя { margin: .25rem 0 0; font-size: var(--кегль-лид); font-weight: 700; line-height: 1.25; }
+  #экран-06 .этап__текст { margin: 0; font-size: var(--кегль-текст); line-height: 1.55; max-width: 34ch; }
+
+  #экран-06 .врезка { position: relative; margin: clamp(32px, 4.4vw, 60px) 0 0; padding: clamp(18px, 2.4vw, 28px) clamp(20px, 3vw, 36px); display: flex; flex-wrap: wrap; align-items: baseline; gap: .25rem 1rem; border-radius: var(--радиус-малый); }
+  #экран-06 .врезка__текст { margin: 0; font-size: var(--кегль-лид); font-weight: 600; line-height: 1.3; }
+
+  #экран-06.светлый .этап::before { border-color: var(--цвет-линия); }
+  #экран-06.светлый .этап::after { border-color: var(--цвет-акцент-маркер); background: var(--цвет-фон); }
+  #экран-06.светлый .этап__номер { color: var(--цвет-акцент-маркер); }
+  #экран-06.светлый .этап__имя { color: var(--цвет-текст); }
+  #экран-06.светлый .этап__текст { color: var(--цвет-текст-мягкий); }
+  #экран-06.светлый .врезка { border-left: var(--нить) solid var(--цвет-акцент-маркер); background: color-mix(in srgb, var(--цвет-тёплый) 16%, transparent); }
+  #экран-06.светлый .врезка__текст { color: var(--цвет-текст); }
+
+  #экран-06.тёмный .этап::before { border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 28%, transparent); }
+  #экран-06.тёмный .этап::after { border-color: var(--цвет-акцент-яркий); }
+  #экран-06.тёмный .этап__номер { color: var(--цвет-акцент-яркий); }
+  #экран-06.тёмный .этап__имя { color: var(--цвет-тёмный-текст); }
+  #экран-06.тёмный .этап__текст { color: color-mix(in srgb, var(--цвет-тёмный-текст) 80%, transparent); }
+  #экран-06.тёмный .врезка { border-left: var(--нить) solid var(--цвет-акцент-яркий); background: color-mix(in srgb, var(--цвет-тёплый) 10%, transparent); }
+  #экран-06.тёмный .врезка__текст { color: var(--цвет-тёмный-текст); }
+
+  @media (max-width: 899px) {
+    #экран-06 .маршрут { grid-template-columns: minmax(0, 1fr); row-gap: 0; }
+    #экран-06 .этап { padding: 0 0 clamp(24px, 6vw, 36px) 40px; }
+    #экран-06 .этап::before { top: 12px; left: 6px; width: 0; height: 100%; border-top: 0; border-left: 1px solid; }
+    #экран-06 .этап:nth-child(3n)::before { width: 0; height: 100%; }
+    #экран-06 .этап:last-child::before { display: none; }
+    #экран-06 .этап::after { top: 4px; }
+    #экран-06 .этап__текст { max-width: none; }
+  }
