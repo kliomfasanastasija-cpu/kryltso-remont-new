@@ -1989,6 +1989,20 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-05 .контур { fill: none; stroke-width: 1; vector-effect: non-scaling-stroke; }
   #экран-05 .земля { stroke-width: 1; stroke-dasharray: 4 4; vector-effect: non-scaling-stroke; }
 
+  #экран-05 .рамка__верх { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; justify-content: space-between; }
+  #экран-05 .вид { display: flex; gap: 6px; }
+  #экран-05 .вид__кнопка { min-height: 44px; padding: 10px 16px; margin: 0; border-radius: var(--радиус-малый); background: none; color: inherit; cursor: pointer; font: inherit; font-size: var(--кегль-мелкий); line-height: 1.3; }
+  #экран-05 .вид__кнопка[aria-pressed="true"] { font-weight: 600; }
+  #экран-05 .вид__кнопка:focus-visible { outline: var(--нить) solid; outline-offset: 4px; }
+  #экран-05 .крыльцо[hidden], #экран-05 .объём[hidden] { display: none; }
+
+  #экран-05 .объём { display: grid; gap: 4px; width: 100%; touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none; }
+  #экран-05 .объём:active { cursor: grabbing; }
+  #экран-05 .объём__холст { width: 100%; aspect-ratio: 100 / 42; display: block; }
+  #экран-05 .объём__подсказка { margin: 0; text-align: center; font-size: var(--кегль-мелкий); }
+  #экран-05 .размеры { margin: 0; font-size: var(--кегль-мелкий); line-height: 1.45; }
+  #экран-05 .размеры[hidden] { display: none; }
+
   #экран-05 .выбор { display: grid; gap: clamp(16px, 1.8vw, 22px); align-content: start; min-width: 0; }
   #экран-05 .выбор__ряд { display: grid; gap: 10px; align-content: start; min-width: 0; }
   #экран-05 .выбор__ряд[hidden] { display: none; }
@@ -2010,6 +2024,26 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-05 .примечание { margin: 0; font-size: var(--кегль-мелкий); line-height: 1.45; }
   #экран-05 .образец:focus-visible, #экран-05 .цвет:focus-visible, #экран-05 .пропитка__кнопка:focus-visible { outline: var(--нить) solid; outline-offset: 4px; }
 
+  #экран-05 .выбор { counter-reset: шаг-выбора; }
+  #экран-05 .выбор__ряд:not([hidden]) { counter-increment: шаг-выбора; }
+  #экран-05 .выбор__подпись { display: flex; align-items: center; gap: 10px; }
+  #экран-05 .выбор__подпись::before { content: counter(шаг-выбора); display: inline-grid; place-items: center; flex: none; width: 26px; height: 26px; border-radius: 50%;
+    font-weight: 700; font-size: var(--кегль-мелкий); letter-spacing: 0; text-transform: none; }
+  #экран-05 .вид__кнопка, #экран-05 .пропитка__кнопка { font-weight: 600; transition: background-color var(--длительность) var(--плавность), border-color var(--длительность) var(--плавность), color var(--длительность) var(--плавность), transform var(--длительность) var(--плавность); }
+  #экран-05 .вид__кнопка:hover, #экран-05 .пропитка__кнопка:hover { transform: translateY(-1px); }
+  #экран-05 .образец__плитка, #экран-05 .цвет__плитка { transition: outline-color .25s var(--плавность), transform .25s var(--плавность), box-shadow .25s var(--плавность); }
+  #экран-05 .образец:hover .образец__плитка, #экран-05 .цвет:hover .цвет__плитка { transform: translateY(-3px); box-shadow: var(--тень-чип); }
+  #экран-05 .выбор__листать { margin-left: auto; font-weight: 600; text-transform: none; letter-spacing: 0; white-space: nowrap; }
+  #экран-05 .выбор__листать[hidden] { display: none; }
+  #экран-05.светлый .выбор__листать { color: var(--цвет-акцент-тёмный); }
+  #экран-05.тёмный .выбор__листать { color: var(--цвет-тёплый); }
+
+  #экран-05 .выбор__ряд--новый { animation: ряд-появился 2.4s var(--плавность) 1; border-radius: var(--радиус-малый); }
+  @keyframes ряд-появился {
+    0%, 100% { box-shadow: 0 0 0 0 transparent; background-color: transparent; }
+    20%, 60% { box-shadow: 0 0 0 8px color-mix(in srgb, var(--цвет-акцент) 14%, transparent); background-color: color-mix(in srgb, var(--цвет-акцент) 14%, transparent); }
+  }
+
   #экран-05 .пункты { list-style: none; margin: 0; padding: 0; }
   #экран-05 .пункт { display: grid; grid-template-columns: clamp(56px, 6vw, 84px) minmax(0, 1fr); gap: 0 clamp(8px, 1.6vw, 20px); align-items: baseline; padding-block: clamp(16px, 2vw, 24px); }
   #экран-05 .пункт__номер { font-size: var(--кегль-цифра); font-weight: 300; line-height: 1; font-variant-numeric: tabular-nums; }
@@ -2029,10 +2063,19 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-05.светлый .образец[aria-pressed="true"] .образец__имя, #экран-05.светлый .цвет[aria-pressed="true"] .цвет__имя { color: var(--цвет-текст); }
   #экран-05.светлый .пропитка__кнопка { border: 1px solid var(--цвет-линия); color: var(--цвет-текст-мягкий); }
   #экран-05.светлый .пропитка__кнопка[aria-pressed="true"] { border-color: var(--цвет-акцент-маркер); color: var(--цвет-текст); }
+  #экран-05.светлый .вид__кнопка { border: 1px solid var(--цвет-линия); color: var(--цвет-текст-мягкий); }
+  #экран-05.светлый .вид__кнопка[aria-pressed="true"] { border-color: var(--цвет-акцент-маркер); color: var(--цвет-текст); }
+  #экран-05.светлый .вид__кнопка:focus-visible { outline-color: var(--цвет-текст); }
+  #экран-05.светлый .объём__подсказка, #экран-05.светлый .размеры { color: var(--цвет-текст-тихий); }
   #экран-05.светлый .пункт { border-top: 1px solid var(--цвет-линия); }
   #экран-05.светлый .пункты .пункт:last-child { border-bottom: 1px solid var(--цвет-линия); }
   #экран-05.светлый .пункт__номер { color: var(--цвет-акцент-маркер); }
   #экран-05.светлый .пункт__текст { color: var(--цвет-текст-мягкий); }
+  #экран-05.светлый .вид__кнопка, #экран-05.светлый .пропитка__кнопка { background: var(--цвет-фон-карточки); border: 1.5px solid color-mix(in srgb, var(--цвет-текст) 30%, transparent); color: var(--цвет-текст); }
+  #экран-05.светлый .вид__кнопка:hover, #экран-05.светлый .пропитка__кнопка:hover { border-color: var(--цвет-акцент-маркер); }
+  #экран-05.светлый .вид__кнопка[aria-pressed="true"], #экран-05.светлый .пропитка__кнопка[aria-pressed="true"] { background: var(--цвет-акцент); border-color: var(--цвет-акцент); color: var(--цвет-на-акценте); }
+  #экран-05.светлый .выбор__подпись { color: var(--цвет-текст); }
+  #экран-05.светлый .выбор__подпись::before { background: var(--цвет-тёмный-фон); color: var(--цвет-тёмный-текст); }
 
   #экран-05.тёмный .рамка { background: color-mix(in srgb, var(--цвет-тёмный-текст) 6%, transparent); border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 22%, transparent); color: var(--цвет-тёмный-текст); }
   #экран-05.тёмный .рамка::before, #экран-05.тёмный .рамка::after { border-color: var(--цвет-акцент-яркий); }
@@ -2047,19 +2090,32 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-05.тёмный .образец[aria-pressed="true"] .образец__имя, #экран-05.тёмный .цвет[aria-pressed="true"] .цвет__имя { color: var(--цвет-тёмный-текст); }
   #экран-05.тёмный .пропитка__кнопка { border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 30%, transparent); color: color-mix(in srgb, var(--цвет-тёмный-текст) 80%, transparent); }
   #экран-05.тёмный .пропитка__кнопка[aria-pressed="true"] { border-color: var(--цвет-акцент-яркий); color: var(--цвет-тёмный-текст); }
+  #экран-05.тёмный .вид__кнопка { border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 30%, transparent); color: color-mix(in srgb, var(--цвет-тёмный-текст) 80%, transparent); }
+  #экран-05.тёмный .вид__кнопка[aria-pressed="true"] { border-color: var(--цвет-акцент-яркий); color: var(--цвет-тёмный-текст); }
+  #экран-05.тёмный .вид__кнопка:focus-visible { outline-color: var(--цвет-тёмный-текст); }
+  #экран-05.тёмный .объём__подсказка, #экран-05.тёмный .размеры { color: color-mix(in srgb, var(--цвет-тёмный-текст) 78%, transparent); }
   #экран-05.тёмный .пункт { border-top: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 22%, transparent); }
   #экран-05.тёмный .пункты .пункт:last-child { border-bottom: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 22%, transparent); }
   #экран-05.тёмный .пункт__номер { color: var(--цвет-акцент-яркий); }
   #экран-05.тёмный .пункт__текст { color: color-mix(in srgb, var(--цвет-тёмный-текст) 80%, transparent); }
 
+  #экран-05.тёмный .вид__кнопка, #экран-05.тёмный .пропитка__кнопка { background: color-mix(in srgb, var(--цвет-тёмный-текст) 8%, transparent); border: 1.5px solid color-mix(in srgb, var(--цвет-тёмный-текст) 45%, transparent); color: var(--цвет-тёмный-текст); }
+  #экран-05.тёмный .вид__кнопка:hover, #экран-05.тёмный .пропитка__кнопка:hover { border-color: var(--цвет-тёплый); }
+  #экран-05.тёмный .вид__кнопка[aria-pressed="true"], #экран-05.тёмный .пропитка__кнопка[aria-pressed="true"] { background: var(--цвет-акцент); border-color: var(--цвет-акцент); color: var(--цвет-на-акценте); }
+  #экран-05.тёмный .выбор__подпись { color: var(--цвет-тёмный-текст); }
+  #экран-05.тёмный .выбор__подпись::before { background: var(--цвет-тёплый); color: var(--цвет-тёмный-фон); }
+
   @media (max-width: 899px) {
     #экран-05 .примерка-и-список { grid-template-columns: 1fr; }
+    #экран-05 .объём__холст { aspect-ratio: 100 / 64; }
     #экран-05 .пункт { grid-template-columns: 52px minmax(0, 1fr); }
     #экран-05 .образцы, #экран-05 .цвета, #экран-05 .цвета--два { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 88px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x proximity; }
     #экран-05 .цвета, #экран-05 .цвета--два { grid-auto-columns: 88px; }
     #экран-05 .образцы li, #экран-05 .цвета li { scroll-snap-align: start; padding: 4px; }
   }
   @media (prefers-reduced-motion: reduce) {
+    #экран-05 .выбор__ряд--новый { animation: none; }
+    #экран-05 .образец:hover .образец__плитка, #экран-05 .цвет:hover .цвет__плитка, #экран-05 .вид__кнопка:hover, #экран-05 .пропитка__кнопка:hover { transform: none; }
     #экран-05 .слой, #экран-05 .образец__плитка, #экран-05 .цвет__плитка { transition: none; }
   }
 
