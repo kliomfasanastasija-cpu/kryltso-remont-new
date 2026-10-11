@@ -2026,7 +2026,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-05 .выбор__подпись { display: flex; align-items: center; gap: 10px; }
   #экран-05 .выбор__подпись::before { content: counter(шаг-выбора); display: inline-grid; place-items: center; flex: none; width: 26px; height: 26px; border-radius: 50%;
     font-weight: 700; font-size: var(--кегль-мелкий); letter-spacing: 0; text-transform: none; }
-  #экран-05 .вид__кнопка, #экран-05 .пропитка__кнопка { font-weight: 600; transition: background-color var(--длительность) var(--плавность), border-color var(--длительность) var(--плавность), color var(--длительность) var(--плавность), transform var(--длительность) var(--плавность); }
+  #экран-05 .вид__кнопка, #экран-05 .пропитка__кнопка { font-weight: 600; transition: background-color var(--длительность) var(--плавность), border-color var(--длительность) var(--плавность), transform var(--длительность) var(--плавность); }
   #экран-05 .вид__кнопка:hover, #экран-05 .пропитка__кнопка:hover { transform: translateY(-1px); }
   #экран-05 .образец__плитка, #экран-05 .цвет__плитка { transition: outline-color .25s var(--плавность), transform .25s var(--плавность), box-shadow .25s var(--плавность); }
   #экран-05 .образец:hover .образец__плитка, #экран-05 .цвет:hover .цвет__плитка { transform: translateY(-3px); box-shadow: var(--тень-чип); }
@@ -2168,6 +2168,9 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-07 .объект { grid-column: span 4; display: flex; flex-direction: column; gap: .875rem; min-width: 0; }
   #экран-07 .объект--главный { grid-column: span 8; }
 
+  #экран-07 .объект--широкий { grid-column: span 12; display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: clamp(20px, 2.6vw, 40px); align-items: end; }
+  #экран-07 .объект--широкий .шторка__кадр { aspect-ratio: 16 / 10; }
+
   #экран-07 .шторка__кадр { --п: 50%; position: relative; flex: 1 1 auto; width: 100%; aspect-ratio: 4 / 3; border-radius: var(--радиус-малый); box-shadow: none; overflow: hidden; touch-action: pan-y; cursor: ew-resize; user-select: none; -webkit-user-select: none; }
   #экран-07 .объект--высокий .шторка__кадр { aspect-ratio: 3 / 4; }
   #экран-07 .шторка__кадр img.шторка__слой { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; pointer-events: none; -webkit-user-drag: none; }
@@ -2216,7 +2219,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 
   @media (max-width: 899px) {
     #экран-07 .объекты { grid-template-columns: minmax(0, 1fr); row-gap: clamp(28px, 7vw, 40px); }
-    #экран-07 .объект, #экран-07 .объект--главный { grid-column: auto; }
+    #экран-07 .объект, #экран-07 .объект--главный, #экран-07 .объект--широкий { grid-column: auto; }
+    #экран-07 .объект--широкий { display: flex; }
     #экран-07 .шторка__кадр { flex: none; }
     #экран-07 .объект__описание, #экран-07 .объект--главный .объект__описание { max-width: none; }
   }
