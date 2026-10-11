@@ -2498,3 +2498,58 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-12 .стоим__объект::after { left: -17px; top: 26px; width: 17px; height: 0; border-left: 0; border-top: 1px solid; }
     #экран-12 .стоим__условия { grid-template-columns: minmax(0, 1fr); }
   }
+
+/* экран 13 */
+#экран-13 { position: relative; overflow: hidden; isolation: isolate; }
+  #экран-13 .блок__внутри { position: relative; z-index: 2; display: grid; align-content: end; min-height: clamp(520px, 78vh, 760px); }
+
+  #экран-13 .фин__кадр { position: absolute; inset: 0; z-index: 0; margin: 0; overflow: hidden; border-radius: 0; box-shadow: none; }
+  #экран-13 .фин__кадр picture { display: block; width: 100%; height: 100%; }
+  #экран-13 .фин__кадр img { display: block; width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: 60% 50%; transform-origin: 60% 60%; animation: фин-наезд 28s ease-out both; }
+  @keyframes фин-наезд { from { transform: scale(1); } to { transform: scale(1.06); } }
+
+  #экран-13 .фин__вуаль { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+
+  #экран-13 .фин__текст { display: grid; gap: clamp(14px, 1.8vw, 22px); align-content: start; justify-items: start; max-width: 32rem; min-width: 0; }
+  #экран-13 .фин__текст h2 { margin: 0; text-wrap: balance; }
+  #экран-13 .фин__лид { margin: 0; font-size: var(--кегль-лид); line-height: 1.5; }
+  #экран-13 .фин__действие { margin-top: clamp(4px, .8vw, 10px); }
+  #экран-13 .фин__подпись { margin: 0; display: flex; flex-wrap: wrap; gap: .25rem .75rem; font-size: var(--кегль-мелкий); line-height: 1.5; }
+  #экран-13 .фин__подпись a { text-decoration: underline; text-underline-offset: .22em; text-decoration-thickness: 1px; overflow-wrap: anywhere; }
+  #экран-13 .фин__часы { flex-basis: 100%; }
+  #экран-13 .фин__подпись a:focus-visible { outline: var(--нить) solid; outline-offset: 4px; }
+
+  #экран-13 .фин__текст { padding-left: clamp(16px, 2vw, 28px); border-left: var(--нить) solid; }
+
+  #экран-13.светлый .фин__вуаль { background: linear-gradient(90deg, color-mix(in srgb, var(--цвет-тёмный-фон) 92%, transparent) 0%, color-mix(in srgb, var(--цвет-тёмный-фон) 78%, transparent) 34%, color-mix(in srgb, var(--цвет-тёмный-фон) 0%, transparent) 64%), linear-gradient(0deg, color-mix(in srgb, var(--цвет-тёмный-фон) 70%, transparent) 0%, color-mix(in srgb, var(--цвет-тёмный-фон) 0%, transparent) 45%); }
+  #экран-13.светлый .фин__текст { border-left-color: var(--цвет-акцент-яркий); }
+  #экран-13.светлый .кикер { color: var(--цвет-акцент-яркий); }
+  #экран-13.светлый .фин__текст h2, #экран-13.светлый .фин__лид { color: var(--цвет-тёмный-текст); }
+  #экран-13.светлый .фин__подпись { color: color-mix(in srgb, var(--цвет-тёмный-текст) 85%, transparent); }
+  #экран-13.светлый .фин__подпись a { color: var(--цвет-тёмный-текст); }
+
+  #экран-13.тёмный .фин__вуаль { background: linear-gradient(90deg, color-mix(in srgb, var(--цвет-тёмный-фон) 92%, transparent) 0%, color-mix(in srgb, var(--цвет-тёмный-фон) 78%, transparent) 34%, color-mix(in srgb, var(--цвет-тёмный-фон) 0%, transparent) 64%), linear-gradient(0deg, color-mix(in srgb, var(--цвет-тёмный-фон) 70%, transparent) 0%, color-mix(in srgb, var(--цвет-тёмный-фон) 0%, transparent) 45%); }
+  #экран-13.тёмный .фин__текст { border-left-color: var(--цвет-акцент-яркий); }
+  #экран-13.тёмный .кикер { color: var(--цвет-акцент-яркий); }
+  #экран-13.тёмный .фин__текст h2, #экран-13.тёмный .фин__лид { color: var(--цвет-тёмный-текст); }
+  #экран-13.тёмный .фин__подпись { color: color-mix(in srgb, var(--цвет-тёмный-текст) 85%, transparent); }
+  #экран-13.тёмный .фин__подпись a { color: var(--цвет-тёмный-текст); }
+
+  @media (max-width: 767px) {
+    #экран-13 .блок__внутри { min-height: clamp(560px, 92svh, 720px); }
+    #экран-13 .фин__текст { max-width: none; }
+    #экран-13 .фин__кадр img { object-position: 50% 30%; transform-origin: 50% 30%; }
+    #экран-13.светлый .фин__вуаль { background: linear-gradient(0deg, color-mix(in srgb, var(--цвет-тёмный-фон) 96%, transparent) 0%, color-mix(in srgb, var(--цвет-тёмный-фон) 90%, transparent) 55%, color-mix(in srgb, var(--цвет-тёмный-фон) 0%, transparent) 88%); }
+    #экран-13.тёмный .фин__вуаль { background: linear-gradient(0deg, color-mix(in srgb, var(--цвет-тёмный-фон) 96%, transparent) 0%, color-mix(in srgb, var(--цвет-тёмный-фон) 90%, transparent) 55%, color-mix(in srgb, var(--цвет-тёмный-фон) 0%, transparent) 88%); }
+  }
+
+  @media (max-width: 767px) {
+    #экран-13 { background: var(--цвет-тёмный-фон); padding-top: 0; }
+    #экран-13 .фин__кадр { position: relative; inset: auto; aspect-ratio: 1040 / 1206; }
+    #экран-13 .фин__кадр::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 22%; background: linear-gradient(180deg, transparent, var(--цвет-тёмный-фон)); }
+    #экран-13 .фин__вуаль { display: none; }
+    #экран-13 .блок__внутри { min-height: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #экран-13 .фин__кадр img { animation: none; }
+  }
