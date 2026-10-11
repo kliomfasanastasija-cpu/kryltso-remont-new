@@ -2010,7 +2010,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     outline: 1px solid transparent; outline-offset: 3px; transition: outline-color .25s var(--плавность), background-image .25s var(--плавность); }
   #экран-05 .образец__имя, #экран-05 .цвет__имя { display: block; font-size: var(--кегль-мелкий); line-height: 1.3; font-weight: 400; }
   #экран-05 .образец[aria-pressed="true"] .образец__имя, #экран-05 .цвет[aria-pressed="true"] .цвет__имя { font-weight: 600; }
-  #экран-05 .цвет__имя { overflow-wrap: normal; word-break: normal; hyphens: manual; }
+  #экран-05 .образец__имя, #экран-05 .цвет__имя { overflow-wrap: normal; word-break: normal; hyphens: manual; }
   #экран-05 .образец[aria-pressed="true"] .образец__плитка, #экран-05 .цвет[aria-pressed="true"] .цвет__плитка { outline-width: var(--нить); }
   #экран-05 .цвета { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 10px; align-content: start; margin: 0; padding: 0; list-style: none; }
   #экран-05 .цвета--два { grid-template-columns: repeat(5, minmax(0, 1fr)); }
@@ -2108,7 +2108,11 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-05 .пункт { grid-template-columns: 52px minmax(0, 1fr); }
     #экран-05 .образцы, #экран-05 .цвета, #экран-05 .цвета--два { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 88px; overflow-x: auto; padding-bottom: 8px; scroll-snap-type: x proximity; }
     #экран-05 .цвета, #экран-05 .цвета--два { grid-auto-columns: 88px; }
+    #экран-05 .образцы { grid-auto-columns: 112px; }
     #экран-05 .образцы li, #экран-05 .цвета li { scroll-snap-align: start; padding: 4px; }
+  }
+  @media (min-width: 900px) and (max-width: 1279px) {
+    #экран-05 .образец__имя { font-size: var(--кегль-кикер); }
   }
   @media (prefers-reduced-motion: reduce) {
     #экран-05 .выбор__ряд--новый { animation: none; }
