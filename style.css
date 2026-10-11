@@ -2553,3 +2553,48 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   @media (prefers-reduced-motion: reduce) {
     #экран-13 .фин__кадр img { animation: none; }
   }
+
+/* экран 14 */
+#экран-14 .подв__сетка { display: grid; grid-template-columns: 1fr; gap: 32px; align-content: start; }
+  #экран-14 .подв__кол { min-width: 0; align-content: start; }
+  #экран-14 .подв__знак { display: block; margin: 0 0 14px; line-height: 0; border-radius: 0; box-shadow: none; overflow: visible; }
+  #экран-14 .подв__знак img { display: block; aspect-ratio: auto; width: auto; height: 40px; max-width: 100%; object-fit: contain; border-radius: 0; box-shadow: none; }
+  #экран-14 .подв__знак-тёмный { display: none; }
+  #экран-14.тёмный .подв__знак-тёмный { display: block; }
+  #экран-14.тёмный .подв__знак-светлый { display: none; }
+  #экран-14.светлый .подв__знак-светлый { display: block; }
+  #экран-14.светлый .подв__знак-тёмный { display: none; }
+  #экран-14 .подв__подпись { margin: 0; max-width: 32ch; font-size: var(--кегль-мелкий); line-height: 1.5; }
+  #экран-14 h4 { margin: 0 0 14px; padding-bottom: 10px; font-size: var(--кегль-мелкий); text-transform: uppercase; letter-spacing: var(--разрядка-кикера); }
+  #экран-14 .подвал__ссылки a, #экран-14 .подв__контакты a, #экран-14 .подв__контакты p { font-size: var(--кегль-мелкий); line-height: 1.45; }
+  #экран-14 .подв__контакты { display: grid; gap: 10px; margin: 0; padding: 0; list-style: none; align-content: start; }
+  #экран-14 .подв__контакты li { margin: 0; }
+  #экран-14 .подв__тел { font-size: var(--кегль-текст); }
+  #экран-14 .подв__часы { margin: 0; }
+  #экран-14 .подв__подсказка { display: block; font-size: var(--кегль-мелкий); }
+  #экран-14 .подв__адрес { display: inline-block; text-decoration: none; }
+  #экран-14 .подв__низ { margin-top: 36px; padding-top: 22px; display: grid; gap: 8px; align-content: start; font-size: var(--кегль-мелкий); line-height: 1.5; }
+  #экран-14 .подв__низ p { margin: 0; max-width: 78ch; font-size: var(--кегль-мелкий); }
+  #экран-14 .подв__ип { margin: 0; }
+  #экран-14 .подв__низ .подв__копи { margin-top: 6px; }
+  #экран-14 .подв__нер { white-space: nowrap; }
+
+  #экран-14.светлый .подв__подпись, #экран-14.светлый .подв__контакты a, #экран-14.светлый .подв__контакты p { color: var(--цвет-текст-мягкий); }
+  #экран-14.светлый .подв__тел { color: var(--цвет-текст); }
+  #экран-14.светлый h4 { color: var(--цвет-текст); border-bottom: 1px solid var(--цвет-линия); }
+  #экран-14.светлый .подв__подсказка { color: var(--цвет-текст-тихий); }
+  #экран-14.светлый .подв__низ { border-top: 1px solid var(--цвет-линия); color: var(--цвет-текст-тихий); }
+  #экран-14.светлый .подв__низ p { color: var(--цвет-текст-тихий); }
+  #экран-14.светлый .подв__адрес:hover { text-decoration: underline; color: var(--цвет-акцент-тёмный); }
+  #экран-14.тёмный .подв__подпись, #экран-14.тёмный .подв__контакты a, #экран-14.тёмный .подв__контакты p { color: color-mix(in srgb, var(--цвет-тёмный-текст) 72%, transparent); }
+  #экран-14.тёмный .подв__тел { color: var(--цвет-тёмный-текст); }
+  #экран-14.тёмный h4 { color: var(--цвет-тёмный-текст); border-bottom: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 16%, transparent); }
+  #экран-14.тёмный .подв__подсказка { color: color-mix(in srgb, var(--цвет-тёмный-текст) 58%, transparent); }
+  #экран-14.тёмный .подв__низ { border-top: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 16%, transparent); }
+  #экран-14.тёмный .подв__низ p { color: color-mix(in srgb, var(--цвет-тёмный-текст) 62%, transparent); }
+  #экран-14.тёмный .подв__адрес:hover { text-decoration: underline; color: var(--цвет-тёплый); }
+
+  @media (min-width: 900px) {
+    #экран-14 .подв__сетка { grid-template-columns: 1.2fr 1fr 1.3fr; gap: 48px; }
+    #экран-14 .подв__низ { grid-template-columns: 1fr; }
+  }
