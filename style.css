@@ -2337,3 +2337,68 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-10 .комп-материал__подпись { margin: 0; font-size: var(--кегль-мелкий); line-height: 1.45; }
   #экран-10.светлый .комп-материал__подпись { color: var(--цвет-текст-мягкий); }
   #экран-10.тёмный .комп-материал__подпись { color: color-mix(in srgb, var(--цвет-тёмный-текст) 80%, transparent); }
+
+/* экран 11 */
+#экран-11 h2 { text-wrap: balance; }
+  #экран-11 .вопр__разворот { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(28px, 6vw, 88px); align-items: start; align-content: start; }
+  #экран-11 .вопр__лево { display: grid; gap: clamp(20px, 2.6vw, 32px); align-content: start; min-width: 0; }
+  #экран-11 .вопр__лево .секция__шапка { margin: 0; }
+
+  #экран-11 .вопр__зов { position: relative; display: grid; gap: .5rem; align-content: start; padding: clamp(16px, 2vw, 24px) clamp(16px, 2vw, 24px) clamp(16px, 2vw, 24px) clamp(18px, 2.2vw, 28px); border-radius: var(--радиус-малый); }
+  #экран-11 .вопр__зов::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: var(--нить); }
+  #экран-11 .вопр__зов-имя { margin: 0; font-size: var(--кегль-лид); font-weight: 700; line-height: 1.25; }
+  #экран-11 .вопр__зов-текст { margin: 0; font-size: var(--кегль-текст); line-height: 1.55; }
+  #экран-11 .вопр__тел { display: inline-flex; align-items: center; min-height: 44px; width: fit-content; font-size: var(--кегль-лид); font-weight: 700; line-height: 1.2; font-variant-numeric: tabular-nums; text-decoration: none; white-space: nowrap; }
+  #экран-11 .вопр__тел:hover { text-decoration: underline; text-underline-offset: 4px; }
+  #экран-11 .вопр__тел:focus-visible { outline: var(--нить) solid; outline-offset: 3px; border-radius: var(--радиус-малый); }
+  #экран-11 .вопр__часы { margin: 0; font-size: var(--кегль-мелкий); line-height: 1.4; }
+
+  #экран-11 .вопр__список { display: grid; align-content: start; min-width: 0; }
+  #экран-11 .вопр { margin: 0; padding: 0; }
+  #экран-11 .вопр > summary { display: grid; grid-template-columns: clamp(40px, 4.5vw, 60px) minmax(0, 1fr) 44px; align-items: center; gap: 0 clamp(6px, 1.2vw, 14px); min-height: 44px; padding: clamp(16px, 2vw, 22px) 0; cursor: pointer; list-style: none; }
+  #экран-11 .вопр > summary::-webkit-details-marker { display: none; }
+  #экран-11 .вопр > summary::marker { content: ""; }
+  #экран-11 .вопр > summary:focus-visible { outline: var(--нить) solid; outline-offset: 2px; border-radius: var(--радиус-малый); }
+  #экран-11 .вопр__номер { font-size: var(--кегль-цифра); font-weight: 300; line-height: 1; font-variant-numeric: tabular-nums; }
+  #экран-11 .вопр__вопрос { font-size: var(--кегль-лид); font-weight: 700; line-height: 1.3; min-width: 0; overflow-wrap: break-word; }
+
+  #экран-11 .вопр__знак { position: relative; justify-self: end; width: 44px; height: 44px; }
+  #экран-11 .вопр__знак::before, #экран-11 .вопр__знак::after { content: ""; position: absolute; left: 50%; top: 50%; width: 16px; height: var(--нить); margin: calc(var(--нить) / -2) 0 0 -8px; background: currentColor; transition: transform var(--длительность) var(--плавность); }
+  #экран-11 .вопр__знак::after { transform: rotate(90deg); }
+  #экран-11 .вопр[open] .вопр__знак::after { transform: rotate(0deg); }
+
+  #экран-11 .вопр__ответ { margin: 0; padding: 0 clamp(8px, 4vw, 56px) clamp(18px, 2.2vw, 26px) calc(clamp(40px, 4.5vw, 60px) + clamp(6px, 1.2vw, 14px)); max-width: 44rem; font-size: var(--кегль-текст); line-height: 1.6; }
+
+  #экран-11.светлый .вопр__список { border-top: 1px solid var(--цвет-линия); }
+  #экран-11.светлый .вопр { border-bottom: 1px solid var(--цвет-линия); }
+  #экран-11.светлый .вопр__номер { color: var(--цвет-акцент-маркер); }
+  #экран-11.светлый .вопр[open] .вопр__вопрос { color: var(--цвет-текст); }
+  #экран-11.светлый .вопр__знак { color: var(--цвет-текст-мягкий); }
+  #экран-11.светлый .вопр[open] .вопр__знак { color: var(--цвет-акцент-маркер); }
+  #экран-11.светлый .вопр__ответ { color: var(--цвет-текст-мягкий); }
+  #экран-11.светлый .вопр__зов { background: var(--цвет-тёплый-мягкий); color: var(--цвет-текст); }
+  #экран-11.светлый .вопр__зов::before { background: var(--цвет-акцент-маркер); }
+  #экран-11.светлый .вопр__зов-текст, #экран-11.светлый .вопр__часы { color: var(--цвет-текст-мягкий); }
+  #экран-11.светлый .вопр__тел { color: var(--цвет-акцент-тёмный); }
+
+  #экран-11.тёмный .вопр__список { border-top: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 22%, transparent); }
+  #экран-11.тёмный .вопр { border-bottom: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 22%, transparent); }
+  #экран-11.тёмный .вопр__номер { color: var(--цвет-акцент-яркий); }
+  #экран-11.тёмный .вопр__знак { color: color-mix(in srgb, var(--цвет-тёмный-текст) 80%, transparent); }
+  #экран-11.тёмный .вопр[open] .вопр__знак { color: var(--цвет-акцент-яркий); }
+  #экран-11.тёмный .вопр__ответ { color: color-mix(in srgb, var(--цвет-тёмный-текст) 80%, transparent); }
+  #экран-11.тёмный .вопр__зов { background: color-mix(in srgb, var(--цвет-тёплый) 14%, transparent); color: var(--цвет-тёмный-текст); }
+  #экран-11.тёмный .вопр__зов::before { background: var(--цвет-тёплый); }
+  #экран-11.тёмный .вопр__зов-текст, #экран-11.тёмный .вопр__часы { color: color-mix(in srgb, var(--цвет-тёмный-текст) 80%, transparent); }
+  #экран-11.тёмный .вопр__тел { color: var(--цвет-тёплый-мягкий); }
+
+  @media (min-width: 900px) {
+    #экран-11 .вопр__лево { position: sticky; top: clamp(16px, 3vw, 40px); }
+  }
+  @media (max-width: 899px) {
+    #экран-11 .вопр__разворот { grid-template-columns: minmax(0, 1fr); }
+    #экран-11 .вопр > summary { grid-template-columns: 36px minmax(0, 1fr) 44px; }
+    #экран-11 .вопр__номер { font-size: var(--кегль-лид); font-weight: 600; }
+    #экран-11 .вопр__ответ { padding-left: calc(36px + clamp(6px, 1.2vw, 14px)); padding-right: 8px; }
+  }
+  @media (prefers-reduced-motion: reduce) { #экран-11 .вопр__знак::before, #экран-11 .вопр__знак::after { transition: none; } }
