@@ -138,6 +138,7 @@ body, .светлый { --фон-ключа: var(--цвет-фон); --фон-2-
 .шапка__почта { font-size: .8125rem; color: var(--текст-ключа, var(--цвет-текст-мягкий)); opacity: .8; }
 .шапка__контакты a:hover { color: var(--цвет-акцент-тёмный); }
 @media (min-width: 900px) { .шапка__телефон { font-size: 1.375rem; }  .шапка__почта { font-size: .9375rem; } }
+@media (max-width: 359px) { .шапка__лого img.шапка__логотип { height: 2rem; }  .шапка__телефон { font-size: .9375rem; }  .шапка__почта { font-size: .8125rem; } }
 .шапка__лиц svg, .шапка__лиц .иконка { width: .875rem; height: .875rem; flex: none; }
 
 .шапка__лиц .полн { display: inline; }
@@ -1871,9 +1872,10 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-04 .отметка { display: grid; place-items: center; width: 1.625rem; height: 1.625rem; border-radius: 50%; flex: none; }
   #экран-04 .отметка svg { width: 1rem; height: 1rem; }
   #экран-04 .отметка--нет svg { transform: rotate(45deg); }
+  #экран-04 .отметка .иконка { color: inherit; }
   #экран-04.светлый .отметка--да { background: color-mix(in srgb, var(--цвет-акцент) 14%, transparent); color: var(--цвет-акцент-маркер); }
   #экран-04.светлый .отметка--нет { background: var(--цвет-фон-2); color: var(--цвет-текст-тихий); }
-  #экран-04.тёмный .отметка--да { background: color-mix(in srgb, var(--цвет-тёплый) 22%, transparent); color: var(--цвет-тёплый); }
+  #экран-04.тёмный .отметка--да { background: var(--цвет-тёплый); color: var(--цвет-тёмный-фон); }
   #экран-04.тёмный .отметка--нет { background: color-mix(in srgb, var(--цвет-тёмный-текст) 10%, transparent); color: color-mix(in srgb, var(--цвет-тёмный-текст) 60%, transparent); }
 
   #экран-04 .почему { display: grid; gap: .75rem; align-self: center; padding: clamp(20px, 2.4vw, 32px) clamp(20px, 2.4vw, 32px) clamp(20px, 2.4vw, 32px) clamp(20px, 2.6vw, 34px);
@@ -1893,6 +1895,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-04 .таблица th, #экран-04 .таблица td { padding: 18px 20px; text-align: left; vertical-align: middle; font-weight: 400; }
   #экран-04 .таблица thead th { font-size: var(--кегль-мелкий); font-weight: 600; padding-block: 14px; }
   #экран-04 .таблица tbody th { font-weight: 600; width: 34%; }
+  #экран-04 .сравн__сноска { margin: 12px 0 0; font-size: var(--кегль-мелкий); line-height: 1.5; }
   #экран-04 .таблица .итог { font-weight: 700; font-size: var(--кегль-лид); }
 
   #экран-04.светлый .схема { background: var(--цвет-фон-карточки); border: 1px solid var(--цвет-линия); color: var(--цвет-текст); }
@@ -1907,7 +1910,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-04.светлый .почему__текст, #экран-04.светлый .пункт__текст { color: var(--цвет-текст-мягкий); }
   #экран-04.светлый .пункт { border-top: 1px solid var(--цвет-линия); }
   #экран-04.светлый .пункт__номер { color: var(--цвет-акцент-маркер); }
-  #экран-04.светлый .таблица thead th { color: var(--цвет-текст-тихий); border-bottom: 1px solid var(--цвет-текст); }
+  #экран-04.светлый .таблица thead th { color: var(--цвет-текст-мягкий); border-bottom: 1px solid var(--цвет-текст); }
   #экран-04.светлый .таблица tbody th, #экран-04.светлый .таблица tbody td { border-bottom: 1px solid var(--цвет-линия); color: var(--цвет-текст-мягкий); }
   #экран-04.светлый .таблица tbody th { color: var(--цвет-текст); }
   #экран-04.светлый .таблица .наш { background: var(--цвет-фон-карточки); color: var(--цвет-текст); border-left: 1px solid var(--цвет-линия); border-right: 1px solid var(--цвет-линия); }
@@ -2248,7 +2251,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-09.тёмный .голос-длинный figcaption, #экран-09.тёмный .голос-короткий figcaption { color: color-mix(in srgb, var(--цвет-тёмный-текст) 70%, transparent); }
   #экран-09.тёмный .голос-короткий { border-top: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 22%, transparent); }
   #экран-09.тёмный .голос-короткий blockquote { color: color-mix(in srgb, var(--цвет-тёмный-текст) 85%, transparent); }
-  #экран-09.тёмный .все-отзывы a { color: var(--цвет-акцент-яркий); }
+  #экран-09.тёмный .все-отзывы a { color: var(--цвет-тёмный-текст); text-decoration-color: var(--цвет-акцент-яркий); }
 
   @media (max-width: 899px) {
     #экран-09 .голоса { grid-template-columns: minmax(0, 1fr); }
