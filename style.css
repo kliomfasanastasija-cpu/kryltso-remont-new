@@ -1855,7 +1855,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-04 .схема::before { top: 8px; left: 8px; border-top: var(--нить) solid; border-left: var(--нить) solid; }
   #экран-04 .схема::after { right: 8px; bottom: 8px; border-right: var(--нить) solid; border-bottom: var(--нить) solid; }
   #экран-04 .схема__кадр { position: relative; }
-  #экран-04 .схема img { display: block; width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }
+  #экран-04 .схема img { display: block; width: 100%; height: auto; aspect-ratio: 1024 / 563; object-fit: contain; }
   #экран-04 .метка { position: absolute; width: 0; height: 0; }
   #экран-04 .метка::before { content: ""; position: absolute; left: -5px; top: -5px; width: 10px; height: 10px; border-radius: 50%; }
   #экран-04 .метка__линия { position: absolute; left: 0; width: 1px; }
